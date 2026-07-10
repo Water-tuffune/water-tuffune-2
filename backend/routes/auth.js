@@ -5,6 +5,8 @@ const db = require('../db/init');
 
 const router = express.Router();
 
+router.get('/login', (req, res) => res.json({ status: 'ok' }));
+
 router.post('/register', (req, res) => {
   const { name, email, password, phone, role, location } = req.body;
   if (!name || !email || !password || !role) {
