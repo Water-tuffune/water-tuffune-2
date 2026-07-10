@@ -8,9 +8,8 @@ const userRoutes = require('./routes/users');
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5000'];
 app.use(cors({
-  origin: (origin, cb) => { cb(null, !origin || allowedOrigins.includes(origin) || origin.endsWith('.up.railway.app')); },
+  origin: (origin, cb) => { cb(null, !origin); },
   credentials: true,
 }));
 app.use(express.json());
