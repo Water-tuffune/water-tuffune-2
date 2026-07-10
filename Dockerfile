@@ -17,6 +17,7 @@ FROM node:20-alpine
 WORKDIR /app
 COPY --from=builder /build/backend ./backend
 COPY --from=builder /build/frontend/dist ./frontend/dist
+COPY package.json .
 EXPOSE 5000
 ENV NODE_ENV=production
 CMD ["node", "backend/server.js"]
